@@ -50,7 +50,6 @@ async function fonts() {
 		.pipe(dest('app/fonts'));
 }
 
-
 function styles() {
 	return src(cfg.srcDir + 'scss/**/*.{scss,sass}', { sourcemaps: true })
 		.pipe(plumber({ errorHandler: notify.onError('Sass Error: <%= error.message %>') }))
@@ -71,22 +70,20 @@ function styles() {
 }
 
 function stylesMin() {
-	return (
-		src(cfg.srcDir + 'scss/**/*.{scss,sass}', { sourcemaps: false })
-			.pipe(
-				sass({
-					outputStyle: 'compressed', // expanded/compressed
-					silenceDeprecations: ['legacy-js-api'], // Disable old API warnings
-				}).on('error', sass.logError),
-			)
-			.pipe(
-				autoprefixer({
-					overrideBrowserslist: browserslist,
-				}),
-			)
-			// .pipe(csso())
-			.pipe(dest(cfg.outputDir + 'css'))
-	);
+	return src(cfg.srcDir + 'scss/**/*.{scss,sass}', { sourcemaps: false })
+		.pipe(
+			sass({
+				outputStyle: 'compressed', // expanded/compressed
+				silenceDeprecations: ['legacy-js-api'], // Disable old API warnings
+			}).on('error', sass.logError),
+		)
+		.pipe(
+			autoprefixer({
+				overrideBrowserslist: browserslist,
+			}),
+		)
+		.pipe(csso()) //Uncomment to further minify CSS
+		.pipe(dest(cfg.outputDir + 'css'));
 }
 
 function scripts() {

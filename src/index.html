@@ -4,7 +4,8 @@
 		<meta charset="UTF-8" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Document</title>
+		<title>Landing Creta Class</title>
+		<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
 		<link rel="stylesheet" href="css/style.css" />
 	</head>
 	<body>
@@ -18,9 +19,44 @@
 						</div>
 					</div>
 				</section>
+				<section>
+					<h2 class="title">Swiper Example</h2>
+					<div class="gallery">
+						<div class="swiper">
+							<div class="swiper-wrapper">
+								<div class="swiper-slide"><img src="./imgs/gallery/kitty1.jpg" alt="Kitty 1" /></div>
+								<div class="swiper-slide"><img src="./imgs/gallery/kitty2.jpg" alt="Kitty 2" /></div>
+								<div class="swiper-slide"><img src="./imgs/gallery/kitty3.jpg" alt="Kitty 3" /></div>
+								<div class="swiper-slide"><img src="./imgs/gallery/kitty4.jpg" alt="Kitty 4" /></div>
+							</div>
+							<div class="swiper-button-next"></div>
+							<div class="swiper-button-prev"></div>
+							<div class="swiper-pagination"></div>
+						</div>
+					</div>
+				</section>
 			</main>
 			@@include('./html/footer.html')
 		</div>
 		<script src="js/script.min.js"></script>
+
+		<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+		<script>
+			const swiper = new Swiper('.swiper', {
+				loop: true,
+				pagination: {
+					el: '.swiper-pagination',
+					clickable: true,
+				},
+				navigation: {
+					nextEl: '.swiper-button-next',
+					prevEl: '.swiper-button-prev',
+				},
+				autoplay: {
+					delay: 2000,
+					disableOnInteraction: true,
+				},
+			});
+		</script>
 	</body>
 </html>
