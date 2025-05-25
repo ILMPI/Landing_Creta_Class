@@ -1,4 +1,4 @@
-# 📦 eveligora_gulp_5_template
+# 📦  Creta Class Landing Page based on eveligora_gulp_5_template
 
 A fast and simple Gulp 5+ starter template for frontend development.
 
