@@ -1,0 +1,164 @@
+@use './helpers/abstracts' as *;
+
+.learning_slider_block {
+	position: relative;
+	padding: 0 7.6rem;
+}
+
+.learning_slider__item {
+	min-height: 35.8rem;
+	border-radius: 4rem;
+	background: #fce4ec;
+	padding: 4.6rem 5rem 3.3rem 3.2rem;
+	&--pink {
+		background-color: #ffe5f0;
+	}
+	&--beige {
+		background: #fff0cb;
+	}
+	&--blue {
+		background: #ebf2ff;
+	}
+}
+
+.learning_slider__head {
+	display: flex;
+	justify-content: baseline;
+	align-items: center;
+	margin-bottom: 2.5rem;
+	padding-right: 0.9rem;
+	position: relative;
+}
+
+.learning_slider__icon {
+	width: 9.4rem;
+	height: 8.8rem;
+	background-repeat: no-repeat;
+	background-position: center;
+	display: inline-block;
+	background-color: transparent;
+	position: absolute;
+	left: -2rem;
+	top: -2rem;
+
+	&--pink {
+		width: 9.4rem;
+		height: 8.8rem;
+		background-image: url('/imgs/green_book.svg');
+	}
+	&--beige {
+		width: 10rem;
+		height: 9.9rem;
+		background-image: url('/imgs/image_17.svg');
+	}
+	&--blue {
+		// width: 1.18rem;
+		// height: 1.09rem;
+		background-image: url('/imgs/icon_math.svg');
+	}
+}
+
+.learning_slider__title {
+	font-family: $font_1;
+	font-weight: 700;
+	font-size: 2rem;
+	line-height: 1.25;
+	color: #000;
+	padding-left: 7.4rem;
+}
+
+.learning_slider__list {
+	font-family: $font_1;
+	font-weight: 700;
+	font-size: 1.6rem;
+	line-height: 1.25;
+	color: #bd6e89;
+	display: flex;
+	flex-direction: column;
+	gap: 1rem;
+	padding-left: 0;
+	list-style: none;
+	li {
+		position: relative;
+		padding-left: 1.8rem;
+
+		&::before {
+			content: '';
+			width: 1rem;
+			height: 1rem;
+			background: #ff96b9;
+			position: absolute;
+			left: 0;
+			top: 0.4rem;
+		}
+	}
+
+	&--pink {
+		color: #bd6e89;
+
+		li::before {
+			background: #ff96b9;
+		}
+	}
+	&--beige {
+		color: #a58639;
+
+		li::before {
+			background: #d8af4a;
+		}
+	}
+	&--blue {
+		color: rgba(40, 82, 159, 0.9);
+
+		li::before {
+			background: #789bdc;
+		}
+	}
+}
+
+.learning_slider__btn {
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	background-color: transparent;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: contain;
+	width: 3.6rem;
+	height: 1.6rem;
+	cursor: pointer;
+
+	&.learning_slider__btn--prev {
+		left: 0;
+		background-image: url('/imgs/arrow_prev.svg');
+	}
+
+	&.learning_slider__btn--next {
+		right: 0;
+		background-image: url('/imgs/arrow_next.svg');
+	}
+}
+
+.learningSliderPag {
+	display: flex;
+	justify-content: center;
+	gap: 1rem;
+	margin-top: 2rem;
+
+	.bullet {
+		width: 2rem;
+		height: 2rem;
+		border-radius: 50%;
+		border: 0.2rem solid #974e24;
+		background-color: white;
+		opacity: 1;
+
+		transition: background-color 0.3s ease;
+		cursor: pointer;
+
+		&.swiper-pagination-bullet-active {
+			background-color: #974e24;
+			border-color: #974e24;
+		}
+	}
+}

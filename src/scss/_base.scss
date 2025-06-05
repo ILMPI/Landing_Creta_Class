@@ -31,17 +31,46 @@ body {
 
 .section {
 	width: 100%;
+	padding: 8rem 0;
+}
+
+.section__head {
+	margin-bottom: 4rem;
+	text-align: center;
+}
+
+.section__title {
+	font-family: $font_2;
+	font-weight: 700;
+	font-size: 4.8rem;
+	line-height: 1;
+	color: #000;
+
+	&:has(+ .section__descr) {
+		margin-bottom: 2rem;
+	}
+}
+
+.section__descr {
+	font-family: $font_1;
+	font-weight: 400;
+	font-size: 2rem;
+	line-height: 1;
+	color: #000;
 }
 
 .container {
-	// max-width: 126rem;
+	max-width: 154rem;
 	width: 100%;
 
 	margin: 0 auto;
+	padding: 0 2 rem;
+	&.container--v2 {
+		max-width: 133rem;
+	}
 }
 
 /* remove */
-
 
 header,
 footer {
