@@ -44,18 +44,23 @@
 	&--pink {
 		width: 9.4rem;
 		height: 8.8rem;
-		background-image: url('/imgs/green_book.svg');
+		// background-image: url('./imgs/green_book.svg');
 	}
 	&--beige {
 		width: 10rem;
 		height: 9.9rem;
-		background-image: url('/imgs/image_17.svg');
+		// background-image: url('./imgs/image_17.svg');
 	}
-	&--blue {
-		// width: 1.18rem;
-		// height: 1.09rem;
-		background-image: url('/imgs/icon_math.svg');
-	}
+	// &--blue {
+	// 	width: 1.18rem;
+	// 	height: 1.09rem;
+	// 	// background-image: url('./imgs/icon_math.svg');
+	// }
+}
+
+.learning_slider__icon_img {
+	width: 100%;
+	height: 100%;
 }
 
 .learning_slider__title {
@@ -130,12 +135,12 @@
 
 	&.learning_slider__btn--prev {
 		left: 0;
-		background-image: url('/imgs/arrow_prev.svg');
+		// background-image: url('/imgs/arrow_prev.svg');
 	}
 
 	&.learning_slider__btn--next {
 		right: 0;
-		background-image: url('/imgs/arrow_next.svg');
+		// background-image: url('imgs/arrow_next.svg');
 	}
 }
 
