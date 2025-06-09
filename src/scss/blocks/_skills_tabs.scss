@@ -1,0 +1,150 @@
+@use './helpers/abstracts' as *;
+
+.tabs__container {
+	font-family: $font_1;
+	font-weight: 700;
+}
+
+[role='tablist'] {
+	list-style: none; //no bullets
+	margin: 2rem auto; //centered
+	padding: 0;
+	display: flex;
+	gap: 0;
+	justify-content: space-between;
+	align-items: center;
+	border: 0.2rem solid #ff6d25;
+	border-radius: 2.6rem;
+	max-width: 57.2rem;
+	min-height: 7.4rem;
+	overflow: visible;
+	background: #fff;
+}
+
+.tabs__title {
+	li {
+		flex: 1 1 0%;
+		display: flex;
+		margin: 0;
+		padding: 0;
+	}
+}
+
+[role='tab'] {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	width: 100%;
+	padding: 2rem;
+	color: rgba(255, 109, 37, 0.8);
+	text-decoration: none;
+	background: transparent;
+
+	span:first-child {
+		font-size: 1.7rem;
+		margin-bottom: 0.4rem;
+	}
+	span:last-child {
+		font-size: 1.3rem;
+	}
+}
+
+.tabs__title li:first-child a {
+	border-top-left-radius: 2.6rem;
+	border-bottom-left-radius: 2.6rem;
+}
+
+.tabs__title li:last-child a {
+	border-top-right-radius: 2.6rem;
+	border-bottom-right-radius: 2.6rem;
+}
+
+[aria-selected='true'] {
+	position: relative;
+	color: #fff;
+	background: #ff6d25;
+}
+
+[role='tab'][aria-selected='true']::after {
+	content: '';
+	position: absolute;
+	bottom: -1.8rem;
+	left: 50%;
+	transform: translateX(-50%);
+	width: 0;
+	height: 0;
+	border-left: 1.3rem solid transparent;
+	border-right: 1.3rem solid transparent;
+	border-top: 2rem solid #ff6d25;
+}
+
+.tabs__panels {
+	max-width: 130rem;
+	height: 68.2rem;
+	border-radius: 17.6rem 2.6rem 2.6rem 2.6rem;
+	background: linear-gradient(134deg, #fef5db 0%, #ffdfdf 100%);
+}
+
+.tab__panel {
+	display: none;
+}
+
+.tab__panel[hidden] {
+	display: none;
+}
+
+.tab__panel[aria-hidden='false'],
+.tab__panel:not([hidden]) {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 10rem;
+	padding: 10rem 0;
+	flex-wrap: wrap;
+}
+
+.tab__body {
+	display: flex;
+	flex-direction: column;
+	gap: 2rem;
+}
+.tab__media {
+	max-width: 100%;
+	width: 54rem;
+	height: 47.4rem;
+}
+
+.tab__media_image {
+	width: 100%;
+	height: 100%;
+	display: block;
+	object-fit: contain;
+	object-position: center;
+}
+
+.tab__card {
+	display: flex;
+	gap: 3rem;
+	justify-content: center;
+}
+
+.tab__card_content {
+	padding-top: 0.8rem;
+	max-width: 34.6rem;
+}
+
+.tab__card_title {
+	font-size: 2rem;
+	color: #252525;
+	max-width: 16.8rem;
+	margin-bottom: 0.3rem;
+}
+.tab__card_text {
+	font-size: 1.4rem;
+	line-height: 1.6;
+	color: rgba(37, 37, 37, 0.7);
+	&--first {
+		padding-right: 5rem;
+	}
+}

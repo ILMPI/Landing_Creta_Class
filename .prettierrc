@@ -8,11 +8,15 @@
 	"bracketSpacing": true,
 	"printWidth": 120,
 	"arrowParens": "avoid",
+	"htmlWhitespaceSensitivity": "css",
+	"bracketSameLine": false,
+	"singleAttributePerLine": false,
 	"overrides": [
 		{
 			"files": "*.html",
 			"options": {
-				"printWidth": 1000
+				"printWidth": 1000,
+				"parser": "html"
 			}
 		}
 	]
