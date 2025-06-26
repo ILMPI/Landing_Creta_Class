@@ -81,7 +81,7 @@
 
 .tabs__panels {
 	max-width: 130rem;
-	height: 68.2rem;
+	min-height: 68.2rem;
 	border-radius: 17.6rem 2.6rem 2.6rem 2.6rem;
 	background: linear-gradient(134deg, #fef5db 0%, #ffdfdf 100%);
 }
