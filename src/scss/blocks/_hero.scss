@@ -4,10 +4,17 @@
 
 .hero {
 	display: flex;
+
+	display: flex;
+	gap: 15rem;
 }
 
 .hero__col {
-	width: calc(50% - 5rem);
+	// width: calc(50% - 5rem);
+	max-width: 68rem;
+	&--form {
+		padding-top: 10rem;
+	}
 }
 
 .hero__title {
@@ -17,6 +24,7 @@
 	font-weight: 700;
 	font-size: 6.4rem;
 	line-height: 7rem;
+	// max-width: 68rem;
 
 	position: relative;
 
@@ -32,7 +40,7 @@
 }
 
 .hero_form_w {
-	max-width: 60rem;
+	// max-width: 60rem;
 }
 
 .hero_form {
