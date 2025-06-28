@@ -1,0 +1,145 @@
+@use './helpers/abstracts' as *;
+@use './helpers/extends/buttons_extends' as *;
+@use './helpers/extends/extends' as *;
+
+.hero {
+	display: flex;
+}
+
+.hero__col {
+	width: calc(50% - 5rem);
+}
+
+.hero__title {
+	margin-bottom: 11.2rem;
+
+	font-family: $font_1;
+	font-weight: 700;
+	font-size: 6.4rem;
+	line-height: 7rem;
+
+	position: relative;
+
+	&::before {
+		content: url('../imgs/decor_plane.svg');
+		display: block;
+		position: absolute;
+		top: -50%;
+		left: -28%;
+		width: 411.94px;
+		height: auto;
+	}
+}
+
+.hero_form_w {
+	max-width: 60rem;
+}
+
+.hero_form {
+	display: flex;
+	flex-direction: column;
+	gap: 2rem;
+}
+
+.hero_form_title {
+	text-transform: uppercase;
+	font-family: $font_1;
+	font-weight: 700;
+	font-size: 1.6rem;
+	line-height: 1.9rem;
+	margin-bottom: 1.135rem;
+}
+
+.hero_form__radio_wrap {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 2.4rem;
+	margin-bottom: 0.983rem;
+}
+
+.hero_form__radio {
+	@include st_btn;
+
+	height: 6rem;
+	min-width: 13rem;
+	padding: 2rem;
+	font-weight: 700;
+	font-size: 2.4rem;
+
+	border-width: 1.64px 1.64px 4.92px 1.64px;
+	border-style: solid;
+	border-color: rgba($color_black, 15%);
+	border-radius: 0.8rem;
+
+	&:has(.hero_form__radio_in:checked) {
+		background-color: $color_green;
+	}
+}
+
+.hero_form__radio_in {
+	// appearance: none;
+	position: absolute;
+	top: 0;
+	left: 0;
+	opacity: 0;
+	z-index: -1;
+}
+
+.hero_form__submit {
+	@extend %transp_btn_1;
+	@include st_btn;
+	width: 32.8rem;
+	height: 6.6rem;
+	font-size: 1.83rem;
+	line-height: 2.2rem;
+	font-family: $font_1;
+	font-weight: 700;
+	text-transform: uppercase;
+	background: linear-gradient(93.93deg, #ff7b3a 69.26%, rgba(255, 123, 58, 0.59) 80.39%, #ff7b3a 95.95%);
+	border-radius: 9.16425px;
+}
+
+.hero_form__text {
+	font-family: $font_1;
+	font-weight: 500;
+	font-size: 1.83rem;
+	line-height: 100%;
+}
+
+.hero_form__text_discount {
+	margin-bottom: 1.5rem;
+	text-transform: capitalize;
+	& strong {
+		font-size: 3.142rem;
+		text-decoration: line-through;
+	}
+	& span {
+		color: $color_green;
+		font-weight: 700;
+	}
+}
+
+.hero_form__text_cta {
+	color: $color_gray;
+	text-transform: capitalize;
+	& span {
+		text-transform: uppercase;
+		color: $color_bright_red;
+		font-weight: 700;
+	}
+}
+
+.hero__img_w {
+	max-width: 100%;
+	width: 68.1rem;
+	height: 62.2rem;
+}
+
+.hero__img {
+	@extend %contain_img;
+	// width: 100%;
+	// height: 100%;
+	// display: block;
+	// object-fit: contain;
+	// object-position: center;
+}

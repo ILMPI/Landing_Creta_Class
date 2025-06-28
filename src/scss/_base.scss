@@ -10,6 +10,7 @@ html,
 body {
 	height: 100%;
 	scroll-behavior: smooth;
+	color: $color_text;
 }
 
 body {
@@ -60,13 +61,12 @@ body {
 }
 
 .container {
-	max-width: 154rem;
+	max-width: 152rem;
 	width: 100%;
-
 	margin: 0 auto;
 	padding: 0 2 rem;
 	&.container--v2 {
-		max-width: 133rem;
+		max-width: 131rem;
 	}
 	&.container--v3 {
 		max-width: 192rem;
