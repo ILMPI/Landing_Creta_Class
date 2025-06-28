@@ -97,43 +97,30 @@ function switchTab(newTab) {
 	activePanel.removeAttribute('hidden');
 }
 
-// tabButtons.forEach((tab, index) => {
-// 	tab.setAttribute('role', 'tab');
-// 	if (index === 1) {
-// 		tab.setAttribute('aria-selected', 'true');
-// 	} else {
-// 		tab.setAttribute('tabindex', '-1');
-// 		tabPanels[index].setAttribute('hidden', '');
-// 	}
-// });
+//accordion
 
-// tabPanels.forEach(panel => {
-// 	panel.setAttribute('role', 'tab');
-// 	panel.setAttribute('tabindex', '0');
-// });
+const accordion = document.querySelector('.faq__accordion');
 
-// tabsContainer.addEventListener('click', e => {
-// 	const clickedTab = e.target.closest('a');
-// 	if (!clickedTab) return;
-// 	e.preventDefault();
+accordion.addEventListener('click', e => {
+	const activePanel = e.target.closest('.faq__accordion_panel');
+	if (!activePanel) return;
+	console.log(activePanel);
+	toggleAccordion(activePanel);
+});
 
-// 	switchTab(clickedTab);
-// });
+function toggleAccordion(panelToActivate) {
+	const buttons = panelToActivate.parentElement.querySelectorAll('button');
+	const contents = panelToActivate.parentElement.querySelectorAll('.faq__accordion_content');
+	console.log(buttons);
 
-// function switchTab(newTab) {
-// 	const activePanelId = newTab.getAttribute('href');
-// 	const activePanel = tabsContainer.querySelector(activePanelId);
+	buttons.forEach(button => {
+		button.setAttribute('aria-expanded', false);
+	});
 
-// 	tabButtons.forEach(button => {
-// 		button.setAttribute('aria-selected', false);
-// 		button.setAttribute('tabindex', '-1');
-// 	});
+	contents.forEach(content => {
+		content.setAttribute('aria-hidden', true);
+	});
 
-// 	tabPanels.forEach(panel => {
-// 		panel.setAttribute('hidden', true);
-// 	});
-// 	activePanel.removeAttribute('hidden');
-
-// 	newTab.setAttribute('aria-selected', 'true');
-// 	newTab.setAttribute('tabindex', '0');
-// }
+	panelToActivate.querySelector('button').setAttribute('aria-expanded', true);
+	panelToActivate.querySelector('.faq__accordion_content').setAttribute('aria-hidden', false);
+}
