@@ -1,1 +1,72 @@
 @use './helpers/abstracts' as *;
+
+.achivements {
+	max-height: 76.5rem;
+	margin: 15rem 0;
+}
+
+.achievements_w {
+	background-color: $color_oasis;
+	min-height: 65rem;
+	position: relative;
+
+	&.achievements_w::before {
+		position: absolute;
+		content: url('../imgs/vector_10.svg');
+		top: -45px;
+		left: 0;
+		z-index: -1;
+
+		width: auto;
+		height: 6.9rem;
+	}
+
+	&.achievements_w:after {
+		position: absolute;
+		content: url('../imgs/trophy_with_title.svg');
+		top: -17%;
+		left: 34.8%;
+		width: 46.8rem;
+		height: auto;
+	}
+}
+
+.achivements__title {
+	padding-top: 10.8rem;
+	text-transform: capitalize;
+}
+
+.achivements__cards_w {
+	display: flex;
+	gap: 14.2rem;
+	justify-content: center;
+	align-items: center;
+
+	font-family: $font_1;
+	font-weight: 500;
+	font-size: 2rem;
+	line-height: 3.1rem;
+}
+
+.achivements__card {
+	background-color: $color_misty_rose;
+	width: 52.7rem;
+	height: 32.4rem;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 8rem 6rem 6rem;
+	position: relative;
+
+	&.achivements__card--left {
+		transform: rotate(1.5deg);
+	}
+
+	&.achivements__card--right {
+		transform: rotate(-0.99deg);
+	}
+
+	& p {
+		max-width: 30rem;
+	}
+}

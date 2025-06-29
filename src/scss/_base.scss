@@ -47,6 +47,10 @@ body {
 	line-height: 1;
 	color: #000;
 
+	&--font42 {
+		font-size: 4.2rem;
+	}
+
 	&:has(+ .section__descr) {
 		margin-bottom: 2rem;
 	}
