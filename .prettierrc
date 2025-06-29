@@ -10,7 +10,7 @@
 	"arrowParens": "avoid",
 	"htmlWhitespaceSensitivity": "css",
 	"bracketSameLine": false,
-	"singleAttributePerLine": false,
+	"singleAttributePerLine": true,
 	"overrides": [
 		{
 			"files": "*.html",
