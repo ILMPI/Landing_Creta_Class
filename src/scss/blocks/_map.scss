@@ -1,0 +1,68 @@
+@use './helpers/abstracts' as *;
+
+.map__head {
+	@include section__head(6rem, center);
+}
+
+.map__title {
+	@include section__title($mb: 2.8rem);
+}
+
+.map__descr {
+	@include section__descr();
+}
+
+.section__map {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+}
+
+.section__map_wrapper {
+	width: 131rem;
+	height: 71rem;
+	max-width: 100%;
+	box-shadow: 0 2px 3.2rem rgba(90, 109, 122, 0.12);
+	border-radius: none;
+	overflow: hidden;
+	background: #fff;
+
+	aspect-ratio: 1310 / 710;
+
+	@include bp($point_1) {
+		width: 110rem;
+		height: 60rem;
+	}
+	@include bp($point_2) {
+		width: 90rem;
+		height: 50rem;
+	}
+	@include bp($point_4) {
+		width: 100vw;
+		height: 38rem;
+		border-radius: 16px;
+	}
+	@include bp($point_6) {
+		width: 100vw;
+		height: 24rem;
+		border-radius: 10px;
+	}
+	@include bp($point_7) {
+		width: 100vw;
+		height: 17rem;
+		border-radius: 8px;
+	}
+	@include bp($point_8) {
+		width: 100vw;
+		height: 14rem;
+	}
+}
+
+.section__map_iframe {
+	width: 100%;
+	height: 100%;
+	border: 0;
+	display: block;
+	border-radius: inherit;
+}
