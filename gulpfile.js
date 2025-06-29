@@ -132,24 +132,52 @@ function imageSync() {
 }
 
 async function imageSyncMin() {
-		if (!existsSync('src/imgs')) {
+	if (!existsSync('src/imgs')) {
 		return Promise.resolve();
 	}
 	const imagemin = (await import('gulp-imagemin')).default;
 	const imageminPngquant = (await import('imagemin-pngquant')).default;
 	const imageminMozjpeg = (await import('imagemin-mozjpeg')).default;
-	const imageminSvgo = (await import('imagemin-svgo')).default;
+	// const imageminSvgo = (await import('imagemin-svgo')).default;
 
-	return src('src/imgs/**/*', { encoding: false })
+	return src(['src/imgs/**/*.{jpg,jpeg,png,gif,webp,JPG,JPEG,PNG,GIF,WEBP}', '!src/imgs/media/**'], {
+		encoding: false,
+	})
 		.pipe(
 			imagemin([
 				imageminPngquant({ quality: [0.6, 0.8], speed: 1 }),
 				imageminMozjpeg({ quality: 70, progressive: true }),
-				imageminSvgo(),
+				// imageminSvgo(),
 			]),
 		)
 		.pipe(dest('app/imgs'))
 		.pipe(browserSync.stream({ once: true }));
+}
+
+// async function rasterImages() {
+// 	const imagemin = (await import('gulp-imagemin')).default;
+// 	const imageminPngquant = (await import('imagemin-pngquant')).default;
+// 	const imageminMozjpeg = (await import('imagemin-mozjpeg')).default;
+// 	const imageminSvgo = (await import('imagemin-svgo')).default;
+
+// 	return src(['src/imgs/**/*.{jpg,jpeg,png,gif,webp,JPG,JPEG,PNG,GIF,WEBP}', '!src/imgs/media/**'])
+// 		.pipe(
+// 			imagemin([
+// 				imageminPngquant({ quality: [0.6, 0.8], speed: 1 }),
+// 				imageminMozjpeg({ quality: 70, progressive: true }),
+// 			]),
+// 		)
+// 		.pipe(dest('app/imgs'));
+// }
+
+function mediaSync() {
+	return src('src/imgs/media/**/*', { encoding: false })
+		.pipe(dest('app/imgs/media'))
+		.pipe(browserSync.stream({ once: true }));
+}
+
+function svgCopy() {
+	return src(['src/imgs/**/*.svg', '!src/imgs/media/**']).pipe(dest('app/imgs'));
 }
 
 function browsersync() {
@@ -182,13 +210,20 @@ async function pretty() {
 	return src(['src/**/*', '!src/imgs/**/*']).pipe(prettier()).pipe(dest('src'));
 }
 
+async function imageCopyTest() {
+	return src(['src/imgs/**/*.{jpg,jpeg,png,svg,gif,webp,JPG,JPEG,PNG,SVG,GIF,WEBP}', '!src/imgs/media/**'], {
+		encoding: false,
+	}).pipe(dest('app/imgs'));
+}
+
 exports.build = series(
 	clean, // clean the folder
 	htmlMin, // minified HTML
 	fonts, // convert fonts to woff2
 	stylesMin, // minified styles
 	scripts, // minified scripts
-	imageSyncMin, // minified images
+	// imageSyncMin, // minified images
+	parallel(imageSyncMin, svgCopy, mediaSync),
 );
 exports.format = pretty;
 exports.cssmin = stylesMin;
