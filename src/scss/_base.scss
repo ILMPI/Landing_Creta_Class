@@ -4,6 +4,7 @@ html {
 	// font-size: calc(100dvw / 1920 * 10);
 
 	font-size: 10px;
+	scroll-behavior: smooth;
 }
 
 html,
@@ -33,6 +34,7 @@ body {
 .section {
 	width: 100%;
 	padding: 8rem 0;
+	scroll-margin-top: 100px;
 	&.section--hero {
 		margin-top: 13rem;
 	}
@@ -50,6 +52,15 @@ body {
 	line-height: 1;
 	color: #000;
 
+	@include bp($point_2) {
+		font-size: 3.2rem;
+		padding-left: 5rem;
+	}
+	@include bp($point_4) {
+		font-size: 2.4rem;
+		padding-left: 3rem;
+	}
+
 	&--font42 {
 		font-size: 4.2rem;
 	}
@@ -65,6 +76,9 @@ body {
 	font-size: 2rem;
 	line-height: 1;
 	color: #000;
+	@include bp($point_4) {
+		font-size: 1.6rem;
+	}
 }
 
 .container {
