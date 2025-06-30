@@ -1,13 +1,34 @@
 @use './helpers/abstracts' as *;
 
 .achivements {
-	max-height: 76.5rem;
+	// max-height: 76.5rem;
+	width: 100%;
 	margin: 15rem 0;
+	position: relative;
+
+	&::before {
+		position: absolute;
+		content: url('../imgs/winner_cup.svg');
+		top: -5%;
+		left: 83%;
+		width: 21.5rem;
+		height: 19.1rem;
+		z-index: 1;
+	}
+	&::after {
+		position: absolute;
+		content: url('../imgs/decor_achievement_1.svg');
+		top: 84%;
+		left: 1.8%;
+
+		width: 8.8rem;
+		height: 10.1rem;
+	}
 }
 
 .achievements_w {
 	background-color: $color_oasis;
-	min-height: 65rem;
+	// min-height: 65rem;
 	position: relative;
 
 	&.achievements_w::before {
@@ -34,39 +55,35 @@
 .achivements__title {
 	padding-top: 10.8rem;
 	text-transform: capitalize;
+	margin-bottom: 5rem;
 }
 
 .achivements__cards_w {
 	display: flex;
-	gap: 14.2rem;
-	justify-content: center;
-	align-items: center;
 
-	font-family: $font_1;
-	font-weight: 500;
-	font-size: 2rem;
-	line-height: 3.1rem;
+	// align-items: center;
+	padding-bottom: 10rem;
 }
 
 .achivements__card {
-	background-color: $color_misty_rose;
-	width: 52.7rem;
-	height: 32.4rem;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	padding: 8rem 6rem 6rem;
-	position: relative;
+	max-width: 100%;
 
 	&.achivements__card--left {
-		transform: rotate(1.5deg);
+		margin: 0.8rem 10.9rem 0 17.5rem;
+		width: 56.3rem;
+		height: 34.3rem;
+		// margin-left: 17.5rem;
+		// margin-right: 10.9rem;
+		// margin-top: 0.8rem;
 	}
 
 	&.achivements__card--right {
-		transform: rotate(-0.99deg);
+		width: 56.5rem;
+		height: 35.5rem;
+		margin-right: 11.5rem;
 	}
+}
 
-	& p {
-		max-width: 30rem;
-	}
+.card__img {
+	@extend %cover_img;
 }
