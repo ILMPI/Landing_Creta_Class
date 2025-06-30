@@ -13,34 +13,80 @@
 }
 
 //color extends
-%transp_btn_1 {
+%orange_btn_1 {
 	@include st_btn;
 
 	font-weight: 700;
+	text-transform: uppercase;
 	color: $color_white;
-	background-color: transparent;
-	transition: 0.3s ease;
-	border: 2px solid $color_white;
-
-	&:hover {
-		background-color: $color_white;
-		color: $color_black;
+	transition: $transition_dur ease;
+	background-image: linear-gradient(93.93deg, #ff7b3a 69.26%, rgba(255, 123, 58, 0.59) 80.39%, #ff7b3a 95.95%);
+	&:focus,
+	&:hover,
+	&:active {
+		opacity: 0.8;
 	}
 }
 
 //size extends
 %btn_size_1 {
-	min-width: 23.2rem;
+	min-width: 32.8rem;
+	height: 6.6rem;
+	padding: 0 2rem;
+
+	line-height: 6.6rem;
+	font-size: 1.8rem;
+
+	border-radius: 1rem;
+}
+
+%btn_size_2 {
+	min-width: 16.2rem;
 	height: 5.4rem;
 	padding: 0 2rem;
 
-	line-height: 5.4rem;
-	font-size: 1.6rem;
-
-	border-radius: 2px;
+	line-height: 6.6rem;
+	font-size: 1.8rem;
+	border: 1.88702px solid $color_green;
+	border-radius: 1.5rem;
 }
 
 // .btn_white_1 {
 // 	@extend %transp_btn_1;
 // 	@extend %btn_size_1;
 // }
+
+%green_btn_solid {
+	@include st_btn;
+	background: $color_green;
+	color: #fff;
+	font-weight: 600;
+	border: none;
+	transition: $transition_dur ease;
+	box-shadow:
+		0px 3.01px 7.52px 0px #9cffb180,
+		0px 0px 0px 1.5px #2cc84d,
+		0px 1.5px 1.5px 0px #00000024,
+		inset 0px 1.5px 0px 0px #9cffb1;
+	&:hover,
+	&:focus,
+	&:active {
+		background: darkgreen;
+		opacity: 0.9;
+	}
+}
+
+%green_btn_outline {
+	@include st_btn;
+	background: #fff;
+	color: $color_green;
+	border: 2px solid $color_green;
+	font-weight: 600;
+	transition: $transition_dur ease;
+	&:hover,
+	&:focus,
+	&:active {
+		background: lightgreen;
+		color: #fff;
+	}
+}

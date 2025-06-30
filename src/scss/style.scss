@@ -2,8 +2,13 @@
 // @use './fonts';
 @use './base';
 
+//components
+@use './components/btn_white';
+
 //blocks
 // @use './blocks/';
+@use './blocks/header';
+@use './blocks/footer';
 @use './blocks/hero';
 @use './blocks/learning_slider';
 @use './blocks/skills_tabs';

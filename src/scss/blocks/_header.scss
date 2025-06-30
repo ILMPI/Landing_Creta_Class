@@ -1,0 +1,38 @@
+@use './helpers/abstracts' as *;
+
+.header {
+	display: block;
+	background-color: $color_white;
+	padding: 4.6rem 0 3.3rem;
+	box-shadow: 0px 10px 50px 0px #0000000d;
+}
+
+.btn__icon {
+	display: inline-flex;
+	align-items: center;
+
+	font-size: 1.3em;
+
+	&.btn__icon--white {
+		margin-left: 0.7rem;
+	}
+	&.btn__icon--green {
+		margin-right: 1.2rem;
+	}
+}
+
+.header__col.header__col--logo {
+	display: flex;
+	gap: 4.7rem;
+}
+
+.header__buttons {
+	display: flex;
+	gap: 2.7rem;
+}
+
+.header__in {
+	display: flex;
+	justify-content: space-between;
+	row-gap: 5rem;
+}
