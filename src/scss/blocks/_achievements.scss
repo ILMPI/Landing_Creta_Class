@@ -14,6 +14,14 @@
 		width: 21.5rem;
 		height: 19.1rem;
 		z-index: 1;
+		@include bp($point_2) {
+			top: 80%;
+			left: 75%;
+		}
+		@include bp($point_4) {
+			top: -7%;
+			left: 14%;
+		}
 	}
 	&::after {
 		position: absolute;
@@ -23,6 +31,10 @@
 
 		width: 8.8rem;
 		height: 10.1rem;
+		@include bp($point_4) {
+			top: 87%;
+			left: 38.8%;
+		}
 	}
 }
 
@@ -30,6 +42,15 @@
 	background-color: $color_oasis;
 	// min-height: 65rem;
 	position: relative;
+	@include bp($point_2) {
+		border-radius: 50%;
+		border: 2px solid transparent;
+		box-shadow: 0 4px 16px 0 #00000022;
+	}
+
+	@include bp($point_4) {
+		border-radius: 2rem;
+	}
 
 	&.achievements_w::before {
 		position: absolute;
@@ -40,6 +61,14 @@
 
 		width: auto;
 		height: 6.9rem;
+
+		@include bp($point_2) {
+			display: none;
+		}
+
+		// @include bp($point_4) {
+		// 	display: none;
+		// }
 	}
 
 	&.achievements_w:after {
@@ -49,6 +78,16 @@
 		left: 34.8%;
 		width: 46.8rem;
 		height: auto;
+		@include bp($point_2) {
+			top: -12%;
+			left: 25%;
+		}
+		@include bp($point_4) {
+			content: url('../imgs/trophy.svg');
+			top: -10%;
+			left: 12%;
+			transform: rotate(12deg);
+		}
 	}
 }
 
@@ -56,6 +95,15 @@
 	padding-top: 10.8rem;
 	text-transform: capitalize;
 	margin-bottom: 5rem;
+
+	@include bp($point_2) {
+		margin-bottom: 0;
+		font-size: 3rem;
+	}
+	@include bp($point_4) {
+		margin-bottom: 0;
+		font-size: 2.8rem;
+	}
 }
 
 .achivements__cards_w {
@@ -69,6 +117,9 @@
 		flex-wrap: wrap;
 		gap: 2rem;
 		align-items: center;
+	}
+	@include bp($point_4) {
+		gap: 0;
 	}
 }
 
