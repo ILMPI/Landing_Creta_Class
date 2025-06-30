@@ -1,4 +1,5 @@
 @forward '../helpers/extends/buttons_extends';
+@use './helpers/abstracts' as *;
 
 .btn_prime {
 	@extend %orange_btn_1;

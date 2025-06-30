@@ -5,6 +5,13 @@
 	background-color: $color_white;
 	padding: 4.6rem 0 3.3rem;
 	box-shadow: 0px 10px 50px 0px #0000000d;
+
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100vw;
+	// z-index: 999;
+	z-index: 200;
 }
 
 .btn__icon {
@@ -35,4 +42,111 @@
 	display: flex;
 	justify-content: space-between;
 	row-gap: 5rem;
+}
+
+.header__buttons,
+.header__col:not(.header__col--logo) {
+	@include bp($point_2) {
+		display: none;
+	}
+}
+
+.header__burger {
+	display: none;
+	background: none;
+	border: none;
+	flex-direction: column;
+	gap: 8px;
+	padding: 1rem;
+	cursor: pointer;
+	z-index: 100;
+	@include bp($point_2) {
+		display: flex;
+		position: absolute;
+		top: 5rem;
+		right: 2rem;
+	}
+	.header__burger_line {
+		width: 38px;
+		height: 3px;
+		background: #2cc84d;
+		border-radius: 2px;
+		display: block;
+	}
+	&.is-active .header__burger_line:nth-child(1) {
+		transform: translateY(11px) rotate(45deg);
+	}
+	&.is-active .header__burger_line:nth-child(2) {
+		opacity: 0;
+	}
+	&.is-active .header__burger_line:nth-child(3) {
+		transform: translateY(-11px) rotate(-45deg);
+	}
+}
+
+.header__menu {
+	display: flex;
+	gap: 2.7rem;
+	@include bp($point_2) {
+		display: none;
+	}
+}
+
+.header__drawer {
+	display: none;
+	@include bp($point_2) {
+		display: flex;
+		flex-direction: column;
+		position: fixed;
+		top: 13.3rem;
+		left: 0;
+		bottom: 0;
+		width: 80vw;
+		max-width: 320px;
+		background: #fff;
+		box-shadow: 2px 0 20px #0001;
+		z-index: 200;
+		padding: 5rem 2rem 2rem;
+		gap: 2rem;
+		transform: translateX(-100%);
+		transition: transform 0.3s cubic-bezier(0.77, 0, 0.175, 1);
+		&.is-active {
+			transform: translateX(0);
+		}
+	}
+}
+
+.header__drawer_link {
+	padding: 1.4rem 1.2rem;
+	color: #222;
+	text-decoration: none;
+	border-radius: 1.1rem;
+	background: transparent;
+	font-size: 1.2rem;
+	display: flex;
+	align-items: center;
+	gap: 1rem;
+	&--cta {
+		background: #2cc84d;
+		color: #fff;
+		font-weight: 700;
+	}
+}
+
+.header__overlay {
+	display: none;
+	position: fixed;
+	inset: 0;
+	background: rgba(82, 82, 82, 0.12);
+	backdrop-filter: blur(12px);
+	z-index: 100;
+	transition: opacity 0.3s;
+	pointer-events: none;
+	@include bp($point_2) {
+		&.is-active {
+			display: block;
+			opacity: 1;
+			pointer-events: all;
+		}
+	}
 }
