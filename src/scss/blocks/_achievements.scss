@@ -1,1 +1,102 @@
 @use './helpers/abstracts' as *;
+
+.achivements {
+	// max-height: 76.5rem;
+	width: 100%;
+	margin-top: 15rem;
+	position: relative;
+
+	&::before {
+		position: absolute;
+		content: url('../imgs/winner_cup.svg');
+		top: -5%;
+		left: 83%;
+		width: 21.5rem;
+		height: 19.1rem;
+		z-index: 1;
+	}
+	&::after {
+		position: absolute;
+		content: url('../imgs/decor_achievement_1.svg');
+		top: 84%;
+		left: 1.8%;
+
+		width: 8.8rem;
+		height: 10.1rem;
+	}
+}
+
+.achievements_w {
+	background-color: $color_oasis;
+	// min-height: 65rem;
+	position: relative;
+
+	&.achievements_w::before {
+		position: absolute;
+		content: url('../imgs/vector_10.svg');
+		top: -45px;
+		left: 0;
+		z-index: -1;
+
+		width: auto;
+		height: 6.9rem;
+	}
+
+	&.achievements_w:after {
+		position: absolute;
+		content: url('../imgs/trophy_with_title.svg');
+		top: -17%;
+		left: 34.8%;
+		width: 46.8rem;
+		height: auto;
+	}
+}
+
+.achivements__title {
+	padding-top: 10.8rem;
+	text-transform: capitalize;
+	margin-bottom: 5rem;
+}
+
+.achivements__cards_w {
+	display: flex;
+
+	// align-items: center;
+	padding-bottom: 10rem;
+
+	@include bp($point_1) {
+		flex-direction: column;
+		flex-wrap: wrap;
+		gap: 2rem;
+		align-items: center;
+	}
+}
+
+.achivements__card {
+	max-width: 100%;
+
+	&.achivements__card--left {
+		margin: 0.8rem 10.9rem 0 17.5rem;
+		width: 56.3rem;
+		height: 34.3rem;
+		// margin-left: 17.5rem;
+		// margin-right: 10.9rem;
+		// margin-top: 0.8rem;
+		@include bp($point_1) {
+			margin: 0;
+		}
+	}
+
+	&.achivements__card--right {
+		width: 56.5rem;
+		height: 35.5rem;
+		margin-right: 11.5rem;
+		@include bp($point_1) {
+			margin: 0;
+		}
+	}
+}
+
+.card__img {
+	@extend %contain_img;
+}

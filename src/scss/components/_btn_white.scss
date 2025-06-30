@@ -1,0 +1,27 @@
+@forward '../helpers/extends/buttons_extends';
+@use './helpers/abstracts' as *;
+
+.btn_prime {
+	@extend %orange_btn_1;
+	@extend %btn_size_1;
+}
+
+.btn_green_solid {
+	@extend %green_btn_solid;
+	@extend %btn_size_2;
+	height: 4.9rem;
+	border-radius: 0.6rem;
+	font-size: 2.1rem;
+	letter-spacing: 0.02em;
+}
+
+.btn_green_outline {
+	@extend %green_btn_outline;
+	@extend %btn_size_2;
+	height: 5.4rem;
+	width: 16.2rem;
+	border-radius: 1.9rem;
+	font-size: 1.7rem;
+	line-height: 2.3rem;
+	text-transform: uppercase;
+}

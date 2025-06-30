@@ -124,3 +124,28 @@ function toggleAccordion(panelToActivate) {
 	panelToActivate.querySelector('button').setAttribute('aria-expanded', true);
 	panelToActivate.querySelector('.faq__accordion_content').setAttribute('aria-hidden', false);
 }
+
+//hamburger
+
+document.addEventListener('DOMContentLoaded', function () {
+	const burger = document.querySelector('.header__burger');
+	const drawer = document.querySelector('.header__drawer');
+	const overlay = document.querySelector('.header__overlay');
+
+	function closeMenu() {
+		burger.classList.remove('is-active');
+		drawer.classList.remove('is-active');
+		overlay.classList.remove('is-active');
+		burger.setAttribute('aria-expanded', 'false');
+		drawer.setAttribute('aria-hidden', 'true');
+	}
+	burger.addEventListener('click', function () {
+		const open = !burger.classList.contains('is-active');
+		burger.classList.toggle('is-active');
+		drawer.classList.toggle('is-active');
+		overlay.classList.toggle('is-active');
+		burger.setAttribute('aria-expanded', open ? 'true' : 'false');
+		drawer.setAttribute('aria-hidden', open ? 'false' : 'true');
+	});
+	overlay.addEventListener('click', closeMenu);
+});

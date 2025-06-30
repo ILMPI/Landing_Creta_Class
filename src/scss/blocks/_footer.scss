@@ -1,0 +1,55 @@
+@use './helpers/abstracts' as *;
+
+.footer {
+	display: block;
+	background-color: $color_oasis;
+	padding: 4.6rem 0 5.2rem;
+}
+
+.footer__in {
+	display: flex;
+	justify-content: space-between;
+	column-gap: 5rem;
+	flex-wrap: wrap;
+	@include bp($point_2) {
+		justify-content: center;
+		row-gap: 5rem;
+		align-items: center;
+	}
+}
+
+.footer__col.footer__col--logo {
+	display: flex;
+	flex-direction: column;
+	row-gap: 2.35rem;
+}
+
+.footer_info {
+	font-family: $font_1;
+	font-weight: 400;
+	font-size: 2.2rem;
+	// line-height: 1.7;
+
+	& address {
+		max-width: 58rem;
+		font-style: normal;
+		display: flex;
+		flex-direction: column;
+		row-gap: 1.4rem;
+
+		@include bp($point_2) {
+			max-width: 32rem;
+		}
+
+		& p a {
+			text-decoration: none;
+			color: inherit;
+			cursor: pointer;
+		}
+	}
+}
+
+.logo {
+	width: 26rem;
+	height: auto;
+}
