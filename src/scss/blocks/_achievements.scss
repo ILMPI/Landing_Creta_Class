@@ -63,6 +63,13 @@
 
 	// align-items: center;
 	padding-bottom: 10rem;
+
+	@include bp($point_1) {
+		flex-direction: column;
+		flex-wrap: wrap;
+		gap: 2rem;
+		align-items: center;
+	}
 }
 
 .achivements__card {
@@ -75,15 +82,21 @@
 		// margin-left: 17.5rem;
 		// margin-right: 10.9rem;
 		// margin-top: 0.8rem;
+		@include bp($point_1) {
+			margin: 0;
+		}
 	}
 
 	&.achivements__card--right {
 		width: 56.5rem;
 		height: 35.5rem;
 		margin-right: 11.5rem;
+		@include bp($point_1) {
+			margin: 0;
+		}
 	}
 }
 
 .card__img {
-	@extend %cover_img;
+	@extend %contain_img;
 }
