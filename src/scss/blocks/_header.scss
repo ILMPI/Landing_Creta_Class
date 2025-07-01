@@ -10,8 +10,18 @@
 	top: 0;
 	left: 0;
 	width: 100vw;
-	// z-index: 999;
 	z-index: 200;
+}
+
+.logo {
+	width: 100%;
+	max-width: 25.7rem;
+	max-height: 5.2rem;
+	display: block;
+	margin: 0 auto;
+	& img {
+		@extend %cover_img;
+	}
 }
 
 .btn__icon {
