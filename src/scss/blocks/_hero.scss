@@ -138,39 +138,10 @@
 .hero__img_w {
 	width: 100%;
 	max-width: 68.1rem;
-	height: auto;
-	// height: 62.2rem;
+	max-height: 62.2rem;
 	aspect-ratio: 681 / 622;
 	display: block;
 	margin: 0 auto;
-
-	// @include bp($point_1) {
-	// 	width: 110rem;
-	// 	height: 60rem;
-	// }
-	// @include bp($point_2) {
-	// 	width: 90rem;
-	// 	height: 50rem;
-	// }
-	// @include bp($point_4) {
-	// 	width: 100vw;
-	// 	height: 38rem;
-	// 	border-radius: 16px;
-	// }
-	// @include bp($point_6) {
-	// 	width: 100vw;
-	// 	height: 24rem;
-	// 	border-radius: 10px;
-	// }
-	// @include bp($point_7) {
-	// 	width: 100vw;
-	// 	height: 17rem;
-	// 	border-radius: 8px;
-	// }
-	// @include bp($point_8) {
-	// 	width: 100vw;
-	// 	height: 14rem;
-	// }
 }
 
 .hero__img {
