@@ -33,14 +33,14 @@
 		height: 10.1rem;
 		@include bp($point_4) {
 			top: 87%;
-			left: 38.8%;
+			left: 75%;
 		}
 	}
 }
 
 .achievements_w {
 	background-color: $color_oasis;
-	// min-height: 65rem;
+	min-height: 70rem;
 	position: relative;
 	@include bp($point_2) {
 		border-radius: 50%;
@@ -65,10 +65,6 @@
 		@include bp($point_2) {
 			display: none;
 		}
-
-		// @include bp($point_4) {
-		// 	display: none;
-		// }
 	}
 
 	&.achievements_w:after {
@@ -108,15 +104,13 @@
 
 .achivements__cards_w {
 	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 5rem;
+	padding-bottom: 3rem;
 
-	// align-items: center;
-	padding-bottom: 10rem;
-
-	@include bp($point_1) {
-		flex-direction: column;
+	@include bp($point_0) {
 		flex-wrap: wrap;
-		gap: 2rem;
-		align-items: center;
 	}
 	@include bp($point_4) {
 		gap: 0;
@@ -127,27 +121,17 @@
 	max-width: 100%;
 
 	&.achivements__card--left {
-		margin: 0.8rem 10.9rem 0 17.5rem;
 		width: 56.3rem;
 		height: 34.3rem;
-		// margin-left: 17.5rem;
-		// margin-right: 10.9rem;
-		// margin-top: 0.8rem;
-		@include bp($point_1) {
-			margin: 0;
-		}
 	}
 
 	&.achivements__card--right {
 		width: 56.5rem;
 		height: 35.5rem;
-		margin-right: 11.5rem;
-		@include bp($point_1) {
-			margin: 0;
-		}
 	}
 }
 
 .card__img {
 	@extend %contain_img;
+	// height: auto;
 }
