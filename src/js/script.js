@@ -111,18 +111,25 @@ accordion.addEventListener('click', e => {
 function toggleAccordion(panelToActivate) {
 	const buttons = panelToActivate.parentElement.querySelectorAll('button');
 	const contents = panelToActivate.parentElement.querySelectorAll('.faq__accordion_content');
-	console.log(buttons);
+	const button = panelToActivate.querySelector('button');
+	const content = panelToActivate.querySelector('.faq__accordion_content');
+	const icon = button.querySelector('.accordion-icon');
+	const isOpen = button.getAttribute('aria-expanded') === 'true';
 
-	buttons.forEach(button => {
-		button.setAttribute('aria-expanded', false);
+	buttons.forEach(btn => {
+		btn.setAttribute('aria-expanded', false);
+		const icon = btn.querySelector('.accordion-icon');
+		if (icon) icon.classList.remove('rotated');
+	});
+	contents.forEach(cnt => {
+		cnt.setAttribute('aria-hidden', true);
 	});
 
-	contents.forEach(content => {
-		content.setAttribute('aria-hidden', true);
-	});
-
-	panelToActivate.querySelector('button').setAttribute('aria-expanded', true);
-	panelToActivate.querySelector('.faq__accordion_content').setAttribute('aria-hidden', false);
+	if (!isOpen) {
+		button.setAttribute('aria-expanded', true);
+		if (icon) icon.classList.add('rotated');
+		content.setAttribute('aria-hidden', false);
+	}
 }
 
 //hamburger
