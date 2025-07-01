@@ -4,13 +4,16 @@
 
 .hero {
 	display: flex;
-
-	display: flex;
+	flex-wrap: wrap;
 	gap: 15rem;
+
+	@include bp($point_1) {
+		justify-content: center;
+		align-items: center;
+	}
 }
 
 .hero__col {
-	// width: calc(50% - 5rem);
 	max-width: 68rem;
 	&--form {
 		padding-top: 10rem;
@@ -24,7 +27,6 @@
 	font-weight: 700;
 	font-size: 6.4rem;
 	line-height: 7rem;
-	// max-width: 68rem;
 
 	position: relative;
 
@@ -36,11 +38,8 @@
 		left: -28%;
 		width: 411.94px;
 		height: auto;
+		z-index: -1;
 	}
-}
-
-.hero_form_w {
-	// max-width: 60rem;
 }
 
 .hero_form {
@@ -85,7 +84,6 @@
 }
 
 .hero_form__radio_in {
-	// appearance: none;
 	position: absolute;
 	top: 0;
 	left: 0;
@@ -138,16 +136,47 @@
 }
 
 .hero__img_w {
-	max-width: 100%;
-	width: 68.1rem;
-	height: 62.2rem;
+	width: 100%;
+	max-width: 68.1rem;
+	height: auto;
+	// height: 62.2rem;
+	aspect-ratio: 681 / 622;
+	display: block;
+	margin: 0 auto;
+
+	// @include bp($point_1) {
+	// 	width: 110rem;
+	// 	height: 60rem;
+	// }
+	// @include bp($point_2) {
+	// 	width: 90rem;
+	// 	height: 50rem;
+	// }
+	// @include bp($point_4) {
+	// 	width: 100vw;
+	// 	height: 38rem;
+	// 	border-radius: 16px;
+	// }
+	// @include bp($point_6) {
+	// 	width: 100vw;
+	// 	height: 24rem;
+	// 	border-radius: 10px;
+	// }
+	// @include bp($point_7) {
+	// 	width: 100vw;
+	// 	height: 17rem;
+	// 	border-radius: 8px;
+	// }
+	// @include bp($point_8) {
+	// 	width: 100vw;
+	// 	height: 14rem;
+	// }
 }
 
 .hero__img {
 	@extend %contain_img;
-	// width: 100%;
-	// height: 100%;
-	// display: block;
-	// object-fit: contain;
-	// object-position: center;
+}
+
+.button_w {
+	align-self: start;
 }
